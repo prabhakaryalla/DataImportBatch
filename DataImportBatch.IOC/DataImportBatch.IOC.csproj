@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataImportBatch.Contracts\DataImportBatch.Contracts.csproj" />
+    <ProjectReference Include="..\DataImportBatch.Data\DataImportBatch.Data.csproj" />
+    <ProjectReference Include="..\DataImportBatch.Managers\DataImportBatch.Managers.csproj" />
+    <ProjectReference Include="..\DataImportBatch.Services\DataImportBatch.Services.csproj" />
+  </ItemGroup>
+
+</Project>

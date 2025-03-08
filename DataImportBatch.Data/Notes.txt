@@ -1,0 +1,9 @@
+Install the required Entity Framework Core packages in your .NET project
+    Microsoft.EntityFrameworkCore 
+    Microsoft.EntityFrameworkCore.Design
+    Microsoft.EntityFrameworkCore.SqlServer
+    Microsoft.EntityFrameworkCore.Tools
+Define a connection string for your database in your project's configuration file (e.g., appsettings.json)
+Run the command dotnet ef dbcontext scaffold "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AdWorks" Microsoft.EntityFrameworkCore.SqlServer --context-dir Data --output-dir Models
+Install Microsoft.EntityFrameworkCore.SqlServer in IOC and Registration with Dependency Injection
+    services.AddDbContext<AdWorksContext>(options =>   options.UseSqlServer(configuration.GetConnectionString("AdWorksConnectionString")));
