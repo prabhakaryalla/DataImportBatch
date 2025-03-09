@@ -10,4 +10,7 @@ public class TransactionHistoryData
     public string? Quantity { get; set; }
     public string? ActualCost { get; set; }
     public string? ModifiedDate { get; set; }
+
+    public string? ErrorMessage {get; set;}
+    public Guid? Identifier {get; set;}
 }

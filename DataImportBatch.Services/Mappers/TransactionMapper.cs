@@ -1,6 +1,4 @@
-using System;
 using AutoMapper;
-using DataImportBatch.Contracts.Models;
 using DataImportBatch.Data.Models;
 using DataImportBatch.Services.Models;
 
@@ -14,7 +12,6 @@ public class TransactionMapper : Profile
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
             .ForMember(dest => dest.ListPrice, opt => opt.MapFrom(src => GetDecimalValue(src.ListPrice)));
 
-         CreateMap<Product, ProductResponse>();
 
         CreateMap<TransactionHistoryData, TransactionHistory>()
             .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ProductId))

@@ -4,5 +4,5 @@ namespace DataImportBatch.Contracts.Managers;
 
 public interface IProcessManager
 {
-    void RunAsync();
+    void RunAsync(string fileName);
 }

@@ -2,14 +2,16 @@ using DataImportBatch.Contracts.Managers;
 
 namespace DataImportBatch.Host;
 
-public class HostedService(ILogger<HostedService> logger, IProcessManager processManager) : IHostedService
+public class HostedService(string[] args, ILogger<HostedService> logger, IProcessManager processManager) : IHostedService
 {
     private readonly Task _completedTask = Task.CompletedTask;
 
     public Task StartAsync(CancellationToken cancellationToken)
     {
         logger.LogInformation("{Service} is running.", nameof(HostedService));
-        processManager.RunAsync();
+        string fileName = args[0];
+        Console.WriteLine($"Args----------------------------------------------------------{fileName}");
+        processManager.RunAsync(fileName);
         return _completedTask;
     }
 
